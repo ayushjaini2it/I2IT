@@ -10,6 +10,10 @@ int main(){
     hra = 0.20 * basic;
     da = 1.5 * basic;
     gross = basic + hra + da;
+    printf("----------Salary Details----------\n");
+    printf("Basic Salary is: %.2f\n", basic);
+    printf("HRA is: %.2f\n", hra);
+    printf("DA is: %.2f\n", da);
     printf("Gross Salary is: %.2f\n", gross);
     printf("Name: Ayush Jain\nRoll no: FCB44");
     return 0;
