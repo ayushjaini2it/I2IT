@@ -1,0 +1,20 @@
+strings = "My Name is ayush"
+print("Upper:",strings.upper())
+print("Lower:",strings.lower())
+print("Title",strings.title())
+print("Swapcase:",strings.swapcase())
+print("Capitalize:",strings.capitalize())
+s1 = "Ashuiyhjk12323456"
+print("Isupper:",s1.isupper())
+print("Isalnum:",s1.isalnum())
+print("Islower:",s1.islower())
+s1 = "123412346871357"
+print("Isdigit:",s1.isdigit())
+print("Index:",strings.index("Name"))
+print("Count:",s1.count("1"))
+print("Find:",strings.find("ayush"))
+strings.upper()
+print(strings)
+print("Rfind:",strings.rfind("a"))
+s = strings.replace("ayu", "Ash")
+print("Replace:",s)
