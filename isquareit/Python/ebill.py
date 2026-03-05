@@ -1,3 +1,10 @@
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 units = float(input("Enter the number of units consumed: "))
 
 if units <= 100:

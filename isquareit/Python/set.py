@@ -1,3 +1,10 @@
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 s = {1, 2, 3, 5, 7, 9, 23, 43, 666}
 s1 = { 5, 4, 3, 6, 8, 9, 10, 66, 53}
 

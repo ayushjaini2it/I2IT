@@ -1,3 +1,10 @@
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 a = int(input("Enter a Number"))
 b = int(input("Enter a Number"))
 c = int(input("Enter a Number"))
