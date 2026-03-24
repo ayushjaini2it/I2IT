@@ -1,26 +1,29 @@
 """
-Name: Ayush Jain
-Roll No. : FCB44
-Class : COMP-B
+Name: Mangesh Mahajan
+Roll No. : FIB48
+Class : IT-B
 """
-print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
-strings = "My Name is ayush"
-print("Upper:",strings.upper())
-print("Lower:",strings.lower())
-print("Title",strings.title())
-print("Swapcase:",strings.swapcase())
-print("Capitalize:",strings.capitalize())
-s1 = "Ashuiyhjk12323456"
-print("Isupper:",s1.isupper())
-print("Isalnum:",s1.isalnum())
-print("Islower:",s1.islower())
-s1 = "123412346871357"
-print("Isdigit:",s1.isdigit())
-print("Index:",strings.index("Name"))
-print("Count:",s1.count("1"))
-print("Find:",strings.find("ayush"))
-strings.upper()
-print(strings)
-print("Rfind:",strings.rfind("a"))
-s = strings.replace("ayu", "Ash")
-print("Replace:",s)
+print("Name: Mangesh Mahajan\nRoll No. : FIB48\nClass : IT-B")
+def string_operations(strings):
+    print("Upper:",strings.upper())
+    print("Lower:",strings.lower())
+    print("Title",strings.title())
+    print("Swapcase:",strings.swapcase())
+    print("Capitalize:",strings.capitalize())
+    print("Index:",strings.index("Name"))
+    print("Find:",strings.find("ayush"))
+    strings.upper()
+    print(strings)
+    print("Rfind:",strings.rfind("a"))
+    s = strings.replace("ayu", "Ash")
+    print("Replace:",s)
+def string_methods(s1):
+    print("Isupper:",s1.isupper())
+    print("Isalnum:",s1.isalnum())
+    print("Islower:",s1.islower())
+    print("Isdigit:",s1.isdigit())
+    print("Count:",s1.count("1"))
+strings = "My Name is mangehsH mahajan"
+string_operations(strings)
+s1 = "Ashuiyhjk123231212321456"
+string_methods(s1)
