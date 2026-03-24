@@ -1,0 +1,3 @@
+This is a new line in write and read mode.
+This line is added in append mode.
+This line is added in append and read mode.
