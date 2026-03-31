@@ -1,6 +1,6 @@
 """
-Name: Mangesh Mahajan
-Roll No. : FIB48
+Name: SANSKAR PATIL
+Roll No. : FIB51
 Class : IT-B
 """
 def list_operations(students):

@@ -1,9 +1,9 @@
 """
-Name: Mangesh Mahajan
-Roll No. : FIB48
+Name: SANSKAR PATIL
+Roll No. : FIB51
 Class : IT-B
 """
-print("Name: Mangesh Mahajan\nRoll No. : FIB48\nClass : IT-B")
+print("Name: SANSKAR PATIL\nRoll No. : FIB51\nClass : IT-B")
 units = float(input("Enter the number of units consumed: "))
 
 if units <= 100:
