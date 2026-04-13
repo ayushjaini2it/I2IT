@@ -1,3 +1,9 @@
+"""
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 # write mode
 f = open("ayush.txt", "w")
 f.write("This is a file handling example in Python.")

@@ -1,12 +1,12 @@
 """
-Name: Mangesh Mahajan
-Roll No. : FIB48
-Class : IT-B
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
 """
 
-print("Name: Mangesh Mahajan\nRoll No. : FIB48\nClass : IT-B")
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 file = open("Mangesh Mahajan.txt", 'w')
-file.write("Name: Mangesh Mahajan\nRoll No.: FIB48\nClass: IT-B")
+file.write("Name: Ayush Jain")
 file.close()
 file = open("Mangesh Mahajan.txt", 'r')
 # print(file.read())

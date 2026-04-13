@@ -1,9 +1,9 @@
 """
-Name: SANSKAR PATIL
-Roll No. : FIB51
-Class : IT-B
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
 """
-print("Name: SANSKAR PATIL\nRoll No. : FIB51\nClass : IT-B")
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 a = int(input("Enter Start Number: "))
 b = int(input("Enter End Number: "))
 if a % 2 != 0:

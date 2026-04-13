@@ -1,3 +1,9 @@
+"""
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 class book():
     def details(self):
         self.name = input("Enter the book name: ")
@@ -20,7 +26,7 @@ class student():
     def details(self):
         self.name = input("Enter the Student name: ")
         self.branch = input("Enter the branch name: ")
-        self.roll = input("Enter Roll No: ")
+        self.roll = input("Enter Roll No. : FCB44")
         self.pnr = input("Enter the PNR Number: ")
         self.percentile = input("Enter Percentile: ")
         self.age = input("Enter Studnet age: ")

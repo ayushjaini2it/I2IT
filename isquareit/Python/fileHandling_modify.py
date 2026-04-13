@@ -1,3 +1,9 @@
+"""
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 f1 = open("ayush.txt", 'r')
 f2 = open("modified_ayush.txt", 'w+')
 f1data = f1.read()

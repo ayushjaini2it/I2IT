@@ -1,9 +1,9 @@
 """
-Name: SANSKAR PATIL
-Roll No. : FIB51
-Class : IT-B
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
 """
-print("Name: SANSKAR PATIL\nRoll No. : FIB51\nClass : IT-B")
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 def string_operations(strings):
     print("Upper:",strings.upper())
     print("Lower:",strings.lower())
@@ -27,3 +27,5 @@ strings = "My Name is mangehsH mahajan"
 string_operations(strings)
 s1 = "Ashuiyhjk123231212321456"
 string_methods(s1)
+
+

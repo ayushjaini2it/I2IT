@@ -1,8 +1,5 @@
-"""
-Name: SANSKAR PATIL
-Roll No. : FIB51
-Class : IT-B
-"""
+""" Name: Ayush Jain Roll No. : FCB44  Class : COMP-B """
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 def list_operations(students):
     print("List:", students)
     students.append("Mangesh")
@@ -37,8 +34,9 @@ def list(l):
     print("Count of 4:", l.count(4))
     l.clear()
     print("List after clearing:", l)
-print("Name: Vedant Panchakshare\nRoll No. : FIB59\nClass : IT-B")
 students = ["Ayush", "Atharv", "Daksh", "Shreyash", "Vedant", "Ashutosh"]
 list_operations(students)
 l = [1, 2,3, 4, 5, 6]
 list(l)
+
+

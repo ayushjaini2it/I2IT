@@ -1,9 +1,9 @@
 """
-Name: SANSKAR PATIL
-Roll No. : FIB51
-Class : IT-B
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
 """
-print("Name: SANSKAR PATIL\nRoll No. : FIB51\nClass : IT-B")
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 def unpack_details(details):
     name,  roll_no, city, email = details
     return name, roll_no, city, email
