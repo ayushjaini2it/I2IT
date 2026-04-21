@@ -19,9 +19,6 @@ b1 = book()
 b1.details()
 b1.display()
 
-
-  
-
 class student():
     def details(self):
         self.name = input("Enter the Student name: ")

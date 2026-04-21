@@ -1,3 +1,9 @@
+"""
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 import array as arr
 a = arr.array('i', [1, 2, 3, 4, 5, 1, 1, 2, 1, 2, 3, 4, 5, 1, 1, 2, 1, 2, 3, 4, 5])
 print(a)
@@ -19,3 +25,4 @@ print("Sorted in ascending order:", sorted(a))
 print("Sorted in descending order:", sorted(a, reverse=True))
 print("Maximum value:", max(a))
 print("Minimum value:", min(a))
+

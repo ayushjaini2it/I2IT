@@ -1,3 +1,9 @@
+"""
+Name: Ayush Jain
+Roll No. : FCB44
+Class : COMP-B
+"""
+print("Name: Ayush Jain\nRoll No. : FCB44\nClass : COMP-B")
 class student:
     static_var = 50
     def __init__(self, name):
