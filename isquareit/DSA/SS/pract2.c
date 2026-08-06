@@ -50,21 +50,21 @@ int sub_string(char* sub_str, char*str){
 	return strstr(str, sub_str) - str;
 }
 
-void occurance_word(char* str){
+/* void occurance_word(char* str){
 	char* word = strtok(str, " ");
 	printf("The list of Occurances of each word in the string is as follows:\n");
 	while(word != NULL){
 		printf("%s: %d times.\n", word, count(word, str));
 		word = strtok(NULL, " ");
 	}
-}
+} */
 
 int main(){
 	char str[100], sub_str[100];
 	fgets(str, 100, stdin);
 	palindrome(str);
 	fgets(sub_str, 100, stdin);
-	occurance_word(str);
+	/* occurance_word(str); */
 	printf("%d\n", sub_string(sub_str, str));
 	
 	return 0;
