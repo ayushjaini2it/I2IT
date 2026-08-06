@@ -10,8 +10,8 @@
  	}
  	
  	float average = total/(n-absent)*1.00;
- 	printf("Total Marks: %d", total);
- 	printf("Average Marks: %.2f", average);
+ 	printf("Total Marks: %d\n", total);
+ 	printf("Average Marks: %.2f\n", average);
  }
  
  void min_max( int* marks, int n){
@@ -24,8 +24,8 @@
 			lowest = marks[i];
 		}
  	}
- 	printf("Maximum Marks scored: %d", highest);
- 	printf("Minimum Marks scored: %d", lowest);
+ 	printf("Maximum Marks scored: %d\n", highest);
+ 	printf("Minimum Marks scored: %d\n", lowest);
  }
  
  void absent(int* marks, int n){
@@ -35,7 +35,7 @@
 			absent++;
 		}
  	}
- 	printf("Total numer of absent students: %d", absent);
+ 	printf("Total number of absent students: %d\n", absent);
  }
  
  
@@ -49,10 +49,13 @@
 			}
 			
 		}
-		if(frequency > highest_freq) highest_freq_marks = marks[i];
+		if(frequency > highest_freq) {
+			highest_freq_marks = marks[i];
+			highest_freq = frequency;
+		}
 	}
 	
-	printf("Most frequently occuring marks are: %d", highest_freq_marks);
+	printf("Most frequently occuring marks are: %d\n", highest_freq_marks);
  }
  
 int main(){
