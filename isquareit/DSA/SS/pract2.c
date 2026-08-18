@@ -50,22 +50,53 @@ int sub_string(char* sub_str, char*str){
 	return strstr(str, sub_str) - str;
 }
 
-/* void occurance_word(char* str){
-	char* word = strtok(str, " ");
-	printf("The list of Occurances of each word in the string is as follows:\n");
-	while(word != NULL){
-		printf("%s: %d times.\n", word, count(word, str));
-		word = strtok(NULL, " ");
+void occurance_word(char* str){
+	char copy[100];
+	char* words[50];
+	int total_words = 0;
+	char* token;
+
+	strcpy(copy, str);
+	token = strtok(copy, " \n\t");
+	while(token != NULL){
+		words[total_words++] = token;
+		token = strtok(NULL, " \n\t");
 	}
-} */
+
+	printf("The list of Occurances of each word in the string is as follows:\n");
+
+	for(int i = 0; i < total_words; i++){
+		int already_printed = 0;
+
+		for(int j = 0; j < i; j++){
+			if(strcmp(words[j], words[i]) == 0){
+				already_printed = 1;
+				break;
+			}
+		}
+
+		if(already_printed){
+			continue;
+		}
+
+		int count = 0;
+		for(int k = 0; k < total_words; k++){
+			if(strcmp(words[k], words[i]) == 0){
+				count++;
+			}
+		}
+
+		printf("%s: %d times.\n", words[i], count);
+	}
+} 
 
 int main(){
 	char str[100], sub_str[100];
-	fgets(str, 100, stdin);
+	fgets(str, sizeof(str), stdin);
+	str[strcspn(str, "\n")] = '\0';
 	palindrome(str);
-	fgets(sub_str, 100, stdin);
-	/* occurance_word(str); */
-	printf("%d\n", sub_string(sub_str, str));
+	//fgets(sub_str, 100, stdin);
+	occurance_word(strcpy(sub_str, str));
 	
 	return 0;
 }

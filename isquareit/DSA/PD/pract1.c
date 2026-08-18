@@ -1,3 +1,11 @@
+/* Write a C program to store marks scored in subject “Fundamental
+of Data Structure” by N students in the class. Write functions to compute following:
+a) The average score of class
+b) Highest score and lowest score of class
+c) Count of students who were absent for the test
+d) Display mark with highest frequency
+ */
+ 
 #include <stdio.h>
  void average(int* marks, int n){
  	int total = 0, absent = 0;
@@ -62,17 +70,57 @@ int main(){
 	int n;
 	printf("Enter the Number of Students: ");
 	scanf("%d", &n);
-	int marks[n];
+	int marks[n], choice;
 	printf("Enter the marks of students (Enter -1 for absent):\n");
 	for(int i = 0; i < n; i++){
 		printf("\tEnter the marks of student %d: ", i+1);
 		scanf("%d", &marks[i]);
 	}
-	
-	average(marks,n);
-	min_max(marks, n);
-	absent(marks, n);
-	high_freq(marks, n);
+	printf("Enter your choice:\n1. Average Marks\n2. Minimum and Maximum Marks\n3. Total Absent Students\n4. Most Frequently Occuring Marks\n:");
+	scanf("%d", &choice);
+	switch(choice){
+		case 1:
+			average(marks,n);
+			break;
+		case 2:
+			min_max(marks, n);
+			break;
+		case 3:
+			absent(marks, n);
+			break;
+		case 4:
+			high_freq(marks, n);
+			break;
+		default:
+			printf("Invalid Choice");
+	}
 	
 	return 0;
 }
+
+/* 
+//OUTPUT:
+Enter the Number of Students: 6
+Enter the marks of students (Enter -1 for absent):
+        Enter the marks of student 1: 75      
+        Enter the marks of student 2: 84
+        Enter the marks of student 3: -1
+        Enter the marks of student 4: 97
+        Enter the marks of student 5: 67
+        Enter the marks of student 6: 97
+Enter your choice:
+1. Average Marks
+2. Minimum and Maximum Marks
+3. Total Absent Students
+4. Most Frequently Occuring Marks
+:1
+Total Marks: 420
+Average Marks: 84.00
+:2
+Maximum Marks scored: 97
+Minimum Marks scored: 67
+:3
+Total number of absent students: 1
+:4
+Most frequently occuring marks are: 97
+*/
