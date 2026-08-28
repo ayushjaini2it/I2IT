@@ -17,6 +17,8 @@ void substract(int matrixA[20][20], int matrixB[20][20], int m, int n);
 
 void multiply(int matrixA[20][20], int matrixB[20][20], int m, int n);
 
+void transpose(int matrix[20][20], int m, int n);
+
 
 int main(){
 	int matrixA[20][20], matrixB[20][20];
@@ -37,6 +39,7 @@ int main(){
 	display(matrixA, m1, n1);
 	add(matrixA, matrixB, m1, n1);
 	substract(matrixA, matrixB, m1, n1);
+	multiply(matrixA, matrixB, m1, n2);
 	return 0;
 }
 
@@ -90,6 +93,14 @@ void multiply(int matrixA[20][20], int matrixB[20][20], int m, int n){
 		}
 	}
 	display(matrixC, m, n);
+}
 
-
+void transpose(int matrix[20][20], int m, int n){
+	int matrixT[20][20];
+	for(int row = 0; row < m; row++){
+		for(int column = 0; column < n; column++){
+			matrixT[column][row] = matrix[row][column];
+		}
+	}
+	display(matrixT, n, m);
 }
