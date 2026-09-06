@@ -49,15 +49,76 @@ class Student{
         }
 };
 
-class 
+class updateInfo{
+    public:
+        long int ctnum;
+        void getinfo(){
+            try{             
+                cout << "\nContact Number: ";
+                cin >> ctnum;
+                if (ctnum < 1000000000 || ctnum > 9999999999) throw ctnum;
+            }
+            catch (long int ctnum){
+                cout << "\nException caught!";
+                cout << "\nContact number entered '" << ctnum << "' is too long!\nTry again!";
+                cout << "\nContact Number: ";
+                cin >> ctnum;
+                }
+        }
+        int getroll(Student &obj){
+            return obj.roll;
+        } 
+        void show(Student &obj);
+    };
 
-
+    void updateInfo::show(Student &obj){
+        cout << "\nStudent Name: " << obj.name;
+        cout << "\nClass: " << obj.cls;
+        cout << "\nDivision: " << obj.div;
+        cout << "\nRoll number: " << obj.rollno;
+        cout << "\nDate of Birth: " << obj.dob;
+        cout << "\nBlood Group: " << obj.bdgrp;
+        cout << "\nDriving licence number: " << obj.dri_lic;
+        cout << "\n-------------------------------------\n";
+    }
 
 
 
 
 
 int main(){
-
+    info x[30];
+    int i, n;
+    cout << "Enter the number of students: ";
+    cin >> n;
+    updateInfo s[30];
+    for (i = 0; i < n; i++){cout << "\n---------------------------------------\n\nEnter Details of student " << i + 1;
+        x[i].inputinfo();
+        s[i].getinfo();
+    }
+    cout << "\n_____________________________________________________________" << endl;
+    for (i = 0; i < n; i++){
+        s[i].show(x[i]);
+    }
+    while (true){
+        int r, ch;
+        int flag = 0;
+        cout << "\nEnter student roll number to get info: ";
+        cin >> r;
+        for (i = 0; i < n; i++){
+            if (r == s[i].getroll(x[i])){
+                s[i].show(x[i]);
+                flag = 1;
+                break;
+            }
+        }
+        if (flag == 0)
+            cout << "\nRecord not found!";
+            cout << "\nDo you want to continue? (Enter 1 for Yes, 0 for No): ";
+            cin >> ch;
+            if (ch != 1)
+                break;
+    }
+    cout<<"\nEnding the Program!";
     return 0;
 }
