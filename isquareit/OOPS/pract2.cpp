@@ -14,8 +14,8 @@ public:
         Student(){
             name = "";
 dob = "";
-cl = "";
-roll = 0;
+cls = "";
+rollno  = 0;
 ctnum = 0;
 div = new char[1];
             bdgrp = new char[3];
@@ -31,9 +31,9 @@ delete[] div;
 cin.ignore();
             cout << "\n\n -------------*Student Database*-------------\n \n";
 cout << "Student Name: ";
-getline(cin, nm);
+            getline(cin, name);
 cout << "\nClass: ";
-            getline(cin,cls);
+            getline(cin, cls);
 cout << "\nDivision: ";
 div = new char[10];
 cin >> div;
@@ -66,7 +66,7 @@ class updateInfo{
                 }
         }
         int getroll(Student &obj){
-            return obj.roll;
+            return obj.rollno;
         } 
         void show(Student &obj);
     };
@@ -87,13 +87,13 @@ class updateInfo{
 
 
 int main(){
-    info x[30];
+    Student x[30];
     int i, n;
     cout << "Enter the number of students: ";
     cin >> n;
     updateInfo s[30];
     for (i = 0; i < n; i++){cout << "\n---------------------------------------\n\nEnter Details of student " << i + 1;
-        x[i].inputinfo();
+        x[i].inputInfo();
         s[i].getinfo();
     }
     cout << "\n_____________________________________________________________" << endl;
