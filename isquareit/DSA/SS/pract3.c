@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void input(float arr[], int *n){
-    printf("Enter the number of students: ");
+    printf("\x1b[2J\x1b[HEnter the number of students: ");
     scanf("%d", n);
     if (*n < 1 || *n > 100) {
         printf("Number of students must be between 1 and 100.\n");
@@ -15,11 +15,11 @@ void input(float arr[], int *n){
 }
 
 void display(float arr[], int n){
-    printf("The percentage of students top 5 students are: ");
+    printf("\x1b[3;1H\x1b[1mThe percentage of students top 5 students are: \x1b[48;5;30m");
     for(int i = 0; i < 5 && i < n; i++){
         printf("%.2f ", arr[i]);
     }
-    printf("\n");
+    printf("\x1b[0m\n");
 }
 
 void bubbleSort(float* arr, int n) {
@@ -69,8 +69,9 @@ int main(){
         return 1;
     }
     while(1){
-        printf("\n\n");
         int choice;
+        printf("\x1b[4;1H\x1b[0J");
+        printf("\n");
         printf("Enter the sorting algorithm to be used:\n1: Bubble Sort\n2: Selection Sort\n3: Insertion Sort\n-1: Exit\n");
         scanf("%d", &choice);
         switch(choice){
