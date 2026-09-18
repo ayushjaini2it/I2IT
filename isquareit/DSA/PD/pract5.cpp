@@ -2,8 +2,178 @@
 #include <iostream>
 using namespace std;
 
+struct node{
+    int data;
+    node* next;
+}*top = NULL, *front = NULL, *rear = NULL;
 
-class Stack{
+node* create_stack(){
+    int val;
+    cout << "Enter the Element: ";
+    cin >> val;
+    node* temp = new node;
+    temp->next = NULL;
+    temp->data = val;
+    return temp;
+
+}
+
+void push_stack(){
+	node* temp = create_stack();
+    if(top == NULL){
+	top = temp;
+	cout << "Element Inserted to the Stack" << endl;
+    }
+    else{
+        temp->next = top;
+        top = temp;
+        cout << "Element Inserted to the Stack" << endl;
+    }
+}
+void pop_stack(){
+    if(top == NULL){
+        cout << "The Stack is Empty.\n";
+    }
+    else{
+        node* temp = top;
+        top = temp -> next;
+        cout << "Popped element: " << temp -> data << endl;
+        delete temp;
+    }
+}
+void display_stack(){
+    if(top == NULL){
+        cout << "The Stack is Empty.\n";
+    }
+    else{
+        node* temp = top;
+        while(temp != NULL){
+            cout << temp -> data << " ";
+            temp = temp -> next;
+        }
+        cout << endl;
+    }
+}
+
+
+node* create_queue(){
+    int val;
+    cout << "Enter the Element: ";
+    cin >> val;
+    node* temp = new node;
+    temp->next = NULL;
+    temp->data = val;
+    return temp;
+}
+void enqueue(){
+    if(front == NULL){
+        node* temp = create_queue();
+	    rear = temp;
+	    front = temp;
+        cout << "Element Inserted to the Queue" << endl;
+    }
+    else{
+	    node* temp = create_queue();
+        rear->next = temp;
+        rear = temp;
+        cout << "Element Inserted to the Queue" << endl;
+    }
+}
+void dequeue(){
+    if(front == NULL){
+        cout << "The Queue is Empty.\n";
+    }
+    else{
+        node* temp = front;
+        front = temp -> next;
+        cout << "Dequeued element: " << temp -> data << endl;
+        delete temp;
+    }
+}
+void display_queue(){
+    if(front == NULL){
+        cout << "The Queue is Empty.\n";
+    }
+    else{
+        node* temp = front;
+        while(temp != NULL){
+            cout << temp -> data << " ";
+            temp = temp -> next;
+        }
+        cout << endl;
+    }
+}
+
+int main(){
+    cout << "Stack: \n";
+    push_stack();
+    push_stack();
+    push_stack();
+    display_stack();
+    pop_stack();
+    display_stack();
+
+    cout << "\nQueue: \n";
+    enqueue();
+    enqueue();
+    enqueue();
+    enqueue();
+    display_queue();
+    dequeue();
+    display_queue();
+
+}
+
+
+//OUTPUT
+/*
+Stack:
+Enter the Element: 23
+Element Inserted to the Stack
+Enter the Element: 21
+Element Inserted to the Stack
+Enter the Element: 43
+Element Inserted to the Stack
+43 21 23
+Popped element: 43
+21 23
+
+Queue:
+Enter the Element: 34
+Element Inserted to the Queue
+Enter the Element: 53
+Element Inserted to the Queue
+Enter the Element: 23
+Element Inserted to the Queue
+Enter the Element: 598
+Element Inserted to the Queue
+34 53 23 598
+Dequeued element: 34
+53 23 598
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* class Stack{
     struct Node{
         int data;
         Node* next;
@@ -118,103 +288,6 @@ class Queue{
         }
 }; 
 
-// struct node{
-//     int data;
-//     node* next;
-// }*top = NULL;
-
-// node* create_stack(){
-//     int val;
-//     cout << "Enter the Element: ";
-//     cin >> val;
-//     node* temp = new node;
-//     temp->next = NULL;
-//     temp->data = val;
-//     return temp;
-
-// }
-
-// void push_stack(){
-// 	node* temp = create_stack();
-//     if(top == NULL){
-// 	top = temp;
-//     }
-//     else{
-//         temp->next = top;
-//         top = temp;
-//         cout << "Element Inserted to the Stack" << endl;
-//     }
-// }
-// void pop_stack(){
-//     if(top == NULL){
-//         cout << "The Stack is Empty.\n";
-//     }
-//     else{
-//         node* temp = top;
-//         top = temp -> next;
-//         cout << "Popped element: " << temp -> data << endl;
-//         delete temp;
-//     }
-// }
-// void display_stack(){
-//     if(top == NULL){
-//         cout << "The Stack is Empty.\n";
-//     }
-//     else{
-//         node* temp = top;
-//         while(temp != NULL){
-//             cout << temp -> data << " ";
-//             temp = temp -> next;
-//         }
-//         cout << endl;
-//     }
-// }
-
-// node* create_queue(){
-//     int val;
-//     cout << "Enter the Element: ";
-//     cin >> val;
-//     node* temp = new node;
-//     temp->next = NULL;
-//     temp->data = val;
-//     return temp;
-// }
-// void enqueue(){
-// 	node* temp = create_queue();
-//     if(top == NULL){
-// 	top = temp;
-//     }
-//     else{
-// 	node* temp = create_queue();
-//         top->next = temp;
-//         top = temp;
-//         cout << "Element Inserted to the Queue" << endl;
-//     }
-// }
-// void dequeue(){
-//     if(top == NULL){
-//         cout << "The Queue is Empty.\n";
-//     }
-//     else{
-//         node* temp = top;
-//         top = temp -> next;
-//         cout << "Dequeued element: " << temp -> data << endl;
-//         delete temp;
-//     }
-// }
-// void display_queue(){
-//     if(top == NULL){
-//         cout << "The Queue is Empty.\n";
-//     }
-//     else{
-//         node* temp = top;
-//         while(temp != NULL){
-//             cout << temp -> data << " ";
-//             temp = temp -> next;
-//         }
-//         cout << endl;
-//     }
-// }
 int main(){
     cout << "Stack: \n";
     Stack s;
@@ -225,7 +298,7 @@ int main(){
     s.pop();
     s.display();
     s.isEmpty() ? cout << "Stack is Empty\n" : cout << "Stack is not Empty\n";
-
+    
     cout << "\nQueue: \n";
     Queue q;
     q.enqueue(10);
@@ -235,13 +308,5 @@ int main(){
     q.display();
     q.dequeue();
     q.display();
-
-}
-
-
-
-
-
-
-
-
+    
+} */
