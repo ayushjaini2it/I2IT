@@ -30,31 +30,101 @@ node* create(){
 
 void insert(){
     node* temp = create();
-    if(start == NULL){
+    if(start == NULL|| temp->rollno < start->rollno){
+        temp->next = start;
         start = temp;
     }
     else{
         node*ptr = start;
-        while(temp->rollno > ptr->rollno && ptr != NULL){
+        while(temp->rollno > ptr->rollno && ptr->next != NULL){
             ptr= ptr->next;
         }
-        if(ptr->next == NULL){
-            ptr->next = temp;
-        }
-        else{
-            temp->next = ptr->next;
-            ptr->next = temp;
-        }
+        temp->next = ptr->next;
+        ptr->next = temp;
     }
 }
 
 void update(){
-    
+    node* ptr = start;
+    int roll;
+    cout << "Enter the Student Roll no to update marks: ";
+    cin >> roll;
+    while(ptr->rollno != roll){
+        ptr = ptr->next;
+    }
+    cout << "Enter the New Marks: ";
+    cin >> ptr->marks;
 }
 
-
+void del(){
+    int roll;
+    cout << "Enter the Student Roll no. to remove: ";
+    cin >> roll;
+    node* ptr = start;
+    while(ptr->next->rollno != roll){
+        ptr = ptr->next;
+    }
+    node* temp = ptr->next;
+    ptr->next = ptr->next->next;
+    cout << "Student record removed successfully.";
+    delete temp;
+}
+void search(){
+    int roll;
+    cout << "Enter the Student Roll no. to search: ";
+    cin >> roll;
+    node* ptr = start;
+    while(ptr->rollno != roll){
+        ptr = ptr->next;
+    }
+    cout << "Student Name: " << ptr->name << endl;
+    cout << "Student Roll no.: " << ptr->rollno << endl;
+    cout << "Student Marks: " << ptr->marks << endl;
+}
+void display(){
+    node* ptr = start;
+    cout << "Student Records: " << endl;
+    while(ptr != NULL){
+        cout << "Student Name: " << ptr->name << endl;
+        cout << "Student Roll no.: " << ptr->rollno << endl;
+        cout << "Student Marks: " << ptr->marks << endl << endl;
+        ptr = ptr->next;
+    }
+}
 int main(){
-
+    int choice;
+    do{
+        cout << "1. Add Student Record" << endl;
+        cout << "2. Update Student Record" << endl;
+        cout << "3. Delete Student Record" << endl;
+        cout << "4. Search Student Record" << endl;
+        cout << "5. Display Student Records" << endl;
+        cout << "6. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+        switch(choice){
+            case 1:
+                insert();
+                break;
+            case 2:
+                update();
+                break;
+            case 3:
+                del();
+                break;
+            case 4:
+                search();
+                break;
+            case 5:
+                display();
+                break;
+            case 6:
+                cout << "Exiting the program." << endl;
+                break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    }while(choice != 6);
 
 
     return 0;
