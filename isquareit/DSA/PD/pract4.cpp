@@ -3,12 +3,12 @@
 //Perform operations: Add, Delete, Update, Search, Display records in ascending/descending order based on marks or roll number.
 
 #include <iostream>
-#include <String>
+#include <string>
 using namespace std;
 
 struct node{
     int rollno;
-    String name;
+    string name;
     int marks;
     node* next = NULL;
     void insert_details(){
@@ -29,15 +29,27 @@ node* create(){
 }
 
 void insert(){
+    node* temp = create();
     if(start == NULL){
-        node* temp = create();
         start = temp;
     }
     else{
-        node* temp = create();
-        
-
+        node*ptr = start;
+        while(temp->rollno > ptr->rollno && ptr != NULL){
+            ptr= ptr->next;
+        }
+        if(ptr->next == NULL){
+            ptr->next = temp;
+        }
+        else{
+            temp->next = ptr->next;
+            ptr->next = temp;
+        }
     }
+}
+
+void update(){
+    
 }
 
 
