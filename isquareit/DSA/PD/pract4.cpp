@@ -3,20 +3,42 @@
 //Perform operations: Add, Delete, Update, Search, Display records in ascending/descending order based on marks or roll number.
 
 #include <iostream>
-#include <string>
+#include <String>
 using namespace std;
 
-struct Student{
+struct node{
     int rollno;
-    string name;
-    float marks;
-    Student* next;
+    String name;
+    int marks;
+    node* next = NULL;
     void insert_details(){
         cout << "Enter the Student Name: ";
-        
+        cin >> name;
+        cout << "Enter the Student Roll no.: ";
+        cin >> rollno;
+        cout << "Enter the Student Marks: ";
+        cin >> marks;
     }
-}*linked_list, *start;
+} *start = NULL;
 
+node* create(){
+    node* temp = new node;
+    temp->insert_details();
+    temp->next = NULL;
+    return temp;
+}
+
+void insert(){
+    if(start == NULL){
+        node* temp = create();
+        start = temp;
+    }
+    else{
+        node* temp = create();
+        
+
+    }
+}
 
 
 int main(){
