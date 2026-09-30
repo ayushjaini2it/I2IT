@@ -1,0 +1,14 @@
+2
+--------------
+spider man
+stan lee
+marvel
+400
+18
+--------------
+harry potter
+j k
+disney
+500
+60
+30
