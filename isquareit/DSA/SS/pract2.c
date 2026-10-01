@@ -1,102 +1,101 @@
 #include <stdio.h>
-#include <string.h>
 
-char* longest_word(char* str){
-	char* word = strtok(str, " ");
-	char* long_word = word;
-	int long_len = 0;
-	while(word != NULL){
-		int c_len = strlen(word);
-		if(c_len > long_len){
-			long_len = c_len;
-			long_word = word;
-		}
-		word = strtok(NULL, " ");
-	}
-	return long_word;
+void input(float arr[], int *n){
+    printf("\x1b[2J\x1b[HEnter the number of students: ");
+    scanf("%d", n);
+    if (*n < 1 || *n > 100) {
+        printf("Number of students must be between 1 and 100.\n");
+        *n = 0;
+        return;
+    }
+    printf("Enter the percentage of students: ");
+    for(int i = 0; i < *n; i++){
+        scanf("%f", &arr[i]);
+    }
 }
 
-int count(char* sub_str, char* str){
-	int count = 0;
-	int sub_len = strlen(sub_str);
-	for(int i = 0; i < strlen(str); i++){
-		if(str[i] == sub_str[0]){
-			int j = 0;
-			while(j < sub_len && str[i+j] == sub_str[j]){
-				j++;
-			}
-			if(j == sub_len){
-				count++;
-			}
-		}
-	}
-	return count;
+void display(float arr[], int n){
+    printf("\x1b[3;1H\x1b[1mThe percentage of students top 5 students are: \x1b[48;5;30m");
+    for(int i = 0; i < 5 && i < n; i++){
+        printf("%.2f ", arr[i]);
+    }
+    printf("\x1b[0m\n");
 }
 
-int palindrome(char str[]){
-	int size = strlen(str) - 1;
-	for(int i = 0, j = size - 1; i < size/2; i++, j--){
-		if(str[i] != str[j]){
-			printf("The Entered String is not a Palindrome.\n");
-			return 0;
-		}
-	}
-	printf("The Entered String is a Palindrome.\n");
-	return 1;
+void bubbleSort(float* arr, int n) {
+    for(int i = 0; i < n - 1; i++){
+        for(int j = 0; j < n - i - 1; j++){
+            if(arr[j] > arr[j+1]){
+                float temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
 }
 
-int sub_string(char* sub_str, char*str){
-	sub_str[strlen(sub_str) - 1] = '\0';
-	return strstr(str, sub_str) - str;
+void selectionSort(float* arr, int n) {
+        for(int i = 0; i < n - 1; i++){
+            int j = i, index = i;
+            while(j < n){
+                if(arr[index] > arr[j]){
+                    index = j;
+                }
+                j++;
+            }
+            float temp = arr[index];
+            arr[index] = arr[i];
+            arr[i] = temp;
+        }
 }
 
-void occurance_word(char* str){
-	char copy[100];
-	char* words[50];
-	int total_words = 0;
-	char* token;
-
-	strcpy(copy, str);
-	token = strtok(copy, " \n\t");
-	while(token != NULL){
-		words[total_words++] = token;
-		token = strtok(NULL, " \n\t");
-	}
-
-	printf("The list of Occurances of each word in the string is as follows:\n");
-
-	for(int i = 0; i < total_words; i++){
-		int already_printed = 0;
-
-		for(int j = 0; j < i; j++){
-			if(strcmp(words[j], words[i]) == 0){
-				already_printed = 1;
-				break;
-			}
-		}
-
-		if(already_printed){
-			continue;
-		}
-
-		int count = 0;
-		for(int k = 0; k < total_words; k++){
-			if(strcmp(words[k], words[i]) == 0){
-				count++;
-			}
-		}
-
-		printf("%s: %d times.\n", words[i], count);
-	}
-} 
+void insertionSort(float* arr, int n) {
+    for(int i = 0; i < n; i++){
+        int j = i;
+        while(j > 0 && arr[j-1] > arr[j]){
+            float temp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = temp;
+            j--;
+        }
+    }
+}
 
 int main(){
-	char str[100], sub_str[100];
-	fgets(str, sizeof(str), stdin);
-	str[strcspn(str, "\n")] = '\0';
-	palindrome(str);
-	//fgets(sub_str, 100, stdin);
-	occurance_word(strcpy(sub_str, str));
-	
-	return 0;
+    float percentage[100];
+    int n;
+    input(percentage, &n);
+    if (n == 0) {
+        return 1;
+    }
+    while(1){
+        int choice;
+        printf("\x1b[4;1H\x1b[0J");
+        printf("\n");
+        printf("Enter the sorting algorithm to be used:\n1: Bubble Sort\n2: Selection Sort\n3: Insertion Sort\n-1: Exit\n");
+        scanf("%d", &choice);
+        switch(choice){
+            case 1:
+                bubbleSort(percentage, n);
+                display(percentage, n);
+                break;
+            case 2:
+                selectionSort(percentage, n);
+                display(percentage, n);
+                break;
+            case 3:
+                insertionSort(percentage, n);
+                display(percentage, n);
+                break;
+            case 4:
+                display(percentage, n);
+                break;
+            case -1:
+                printf("Exiting the program....\n");
+                return 0;
+            default:
+                printf("Invalid choice\n");
+        }
+    }
+    return 0;
 }
